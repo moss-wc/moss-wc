@@ -6,19 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MossButton {
+    }
 }
 declare global {
+    interface HTMLMossButtonElement extends Components.MossButton, HTMLStencilElement {
+    }
+    var HTMLMossButtonElement: {
+        prototype: HTMLMossButtonElement;
+        new (): HTMLMossButtonElement;
+    };
     interface HTMLElementTagNameMap {
+        "moss-button": HTMLMossButtonElement;
     }
 }
 declare namespace LocalJSX {
+    interface MossButton {
+    }
     interface IntrinsicElements {
+        "moss-button": MossButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "moss-button": LocalJSX.MossButton & JSXBase.HTMLAttributes<HTMLMossButtonElement>;
         }
     }
 }
