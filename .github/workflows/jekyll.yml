@@ -1,8 +1,6 @@
 name: Jekyll site CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -29,7 +27,7 @@ jobs:
       with:
         registry-url: 'https://npm.pkg.github.com'
         # Defaults to the user or organization that owns the workflow file
-        scope: '@moss-wc'
+        scope: '@mosmaall'
     # Publish to GitHub Packages
     - run: npm publish
       env:
